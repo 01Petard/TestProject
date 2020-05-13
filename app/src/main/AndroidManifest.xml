@@ -4,12 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ixuea.courses.helloworld">
 
-    <dist:module dist:instant="true" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,47 +13,17 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <receiver
-            android:name=".IntentStudy.ForceOfflineBroadcast.ForceOfflineReceiver"
-            android:enabled="true"
-            android:exported="true"></receiver>
-
-        <activity android:name=".IntentStudy.ForceOfflineBroadcast.ForceOfflineActivity"/>
+        <activity android:name=".qizhongkaoshi2Activity"></activity>
+        <activity android:name=".qizhongkaoshi1Activity" />
+        <activity android:name=".IntentStudy.ForceOfflineBroadcast.ForceOfflineActivity" />
         <activity android:name=".IntentStudy.ForceOfflineBroadcast.BaseActivity" />
         <activity android:name=".IntentStudy.BroadcastStudy.LocalBroadcastActivity" />
-
-        <receiver
-            android:name=".IntentStudy.BroadcastStudy.LocalBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.ixuea.courses.helloworld.LOCAL_BROADCAST" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".IntentStudy.BroadcastStudy.MyBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter android:priority="300">
-                <!-- 2147483647 -->
-                <action android:name="com.ixuea.courses.helloworld.MY_BROADCAST" />
-                <action android:name="com.ixuea.courses.helloworld.LOCAL_BROADCAST" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".IntentStudy.BroadcastStudy.BootCompleteReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
         <activity android:name=".IntentStudy.BroadcastStudy.NetworkBorderCastActivity" />
         <activity android:name=".IntentStudy.IntentIndex">
-            <!--<intent-filter>-->
-                <!--<action android:name="com.ixuea.courses.helloworld.FORCE_OFFLINE"/>-->
-            <!--</intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="com.ixuea.courses.helloworld.FORCE_OFFLINE"/> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".IntentStudy.SecondIntent" />
         <activity android:name=".IntentStudy.FirstIntent" />
@@ -90,6 +54,44 @@
         <activity android:name=".BascialView.ImageViewActivity" />
         <activity android:name=".listview.ListViewActivity" />
         <activity android:name=".gridview.GridViewActivity" />
+
+        <receiver
+            android:name=".IntentStudy.ForceOfflineBroadcast.ForceOfflineReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".IntentStudy.BroadcastStudy.LocalBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.ixuea.courses.helloworld.LOCAL_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".IntentStudy.BroadcastStudy.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="300">
+
+                <!-- 2147483647 -->
+                <action android:name="com.ixuea.courses.helloworld.MY_BROADCAST" />
+                <action android:name="com.ixuea.courses.helloworld.LOCAL_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".IntentStudy.BroadcastStudy.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <dist:module dist:instant="true" />
 
 </manifest>

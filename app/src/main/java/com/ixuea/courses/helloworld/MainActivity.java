@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnContextMenu;
     private Button mBtnChat;
     private Button mBtnIntent;
+    private Button mBtnqizhongkaoshi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnContextMenu = findViewById(R.id.btn_contextMenu);
         mBtnChat = findViewById(R.id.btn_chat);
         mBtnIntent = findViewById(R.id.btn_intent);
+        mBtnqizhongkaoshi = findViewById(R.id.btn_qizhongkaoshi);
         setListers();
 
     }
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnContextMenu.setOnClickListener(onClick);
         mBtnChat.setOnClickListener(onClick);
         mBtnIntent.setOnClickListener(onClick);
+        mBtnqizhongkaoshi.setOnClickListener(onClick);
     }
 
     public class OnClick implements View.OnClickListener {
@@ -152,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_intent:
                     intent = new Intent(MainActivity.this, IntentIndex.class);
+                    break;
+                case R.id.btn_qizhongkaoshi:
+                    intent = new Intent(MainActivity.this, qizhongkaoshi1Activity.class);
                     break;
             }
             startActivity(intent);
